@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #000428, #004e92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  animation: bgFade 10s ease-in-out infinite alternate;
+}
+
+@keyframes bgFade {
+  0% {
+    background: linear-gradient(to right, #000428, #004e92);
+  }
+  100% {
+    background: linear-gradient(to right, #1e3c72, #fdbb2d);
+  }
+}
+
+.weather-box {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  transition: all 0.4s ease;
+  width: 90%;
+  max-width: 450px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.weather-box:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(255, 255, 255, 0.3);
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #fddb3a;
+  text-shadow: 1px 1px 2px #000;
+}
+
+input {
+  padding: 14px;
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  transition: box-shadow 0.3s ease;
+}
+
+input:focus {
+  box-shadow: 0 0 10px #fddb3a;
+}
+
+button {
+  padding: 12px 24px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #fddb3a, #0072ff);
+  color: #000;
+}
+
+.error {
+  color: #ff4d4d;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.weather-info {
+  margin-top: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 15px;
+  color: #fff;
+  animation: fadeIn 1s ease forwards;
+}
+
+.weather-info p {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 480px) {
+  .weather-box {
+    padding: 20px;
+  }
+
+  input, button {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .weather-icon {
+    width: 70px;
+    height: 70px;
+  }
+}
